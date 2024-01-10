@@ -11161,8 +11161,8 @@ class TestFft(TorchBaseTest):
             (2, 3, 4), FftnModel(), backend=backend, compute_unit=compute_unit
         )
 
+
 class TestSTFT(TorchBaseTest):
-    @pytest.mark.slow
     @pytest.mark.parametrize(
         "compute_unit, backend, input_shape, complex, n_fft, hop_length, win_length, window, center, pad_mode, normalized, onesided",
         itertools.product(
@@ -11208,7 +11208,6 @@ class TestSTFT(TorchBaseTest):
             compute_unit=compute_unit
         )
 
-    @pytest.mark.slow
     @pytest.mark.parametrize(
         "compute_unit, backend, channels, n_fft, num_frames, hop_length, win_length, window, center, normalized, onesided, length, return_complex",
         itertools.product(
